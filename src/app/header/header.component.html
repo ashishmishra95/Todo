@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <!-- Navbar content -->
+  <a class="navbar-brand" href="#">TODO App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <!-- <a class="nav-item nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a> -->
+      <!-- <a class="nav-item nav-link" 
+        href="" 
+        routerLinkActive="active">How-To-Use</a>
+      <a class="nav-item nav-link"
+        href="" 
+        routerLinkActive="active">About Us</a> -->
+      <!-- <a class="nav-item nav-link" href="#">Features</a>
+      <a class="nav-item nav-link" href="#">Pricing</a> -->
+    </div>
+    <div class="navbar-nav" *ngIf="!this.authService.authState">
+      <a class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+    </div>
+    <div class="navbar-nav" *ngIf="!this.authService.authState">
+      <a class="nav-item nav-link" routerLink="/signup" routerLinkActive="active">Register</a>
+    </div>
+    <div class="navbar-nav ml-auto" *ngIf="this.authService.authState">
+      <a class="nav-item nav-link" routerLink="/todos">My todos</a>
+      <a class="nav-item nav-link" (click)="onLogoutClick()">Logout</a>
+    </div>
+  </div>
+</nav>
